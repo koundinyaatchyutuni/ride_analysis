@@ -35,8 +35,8 @@ schema = StructType([
 # In your consumer.py (or wherever you read from Kafka)
 df = spark.readStream \
   .format("kafka") \
-  .option("kafka.bootstrap.servers", "your_kafka_servers") \
-  .option("subscribe", "your_topic") \
+  .option("kafka.bootstrap.servers", "localhost:9092") \
+  .option("subscribe", "ride-topic") \
   .option("startingOffsets", "latest") \
   .option("failOnDataLoss", "false").load()
 
